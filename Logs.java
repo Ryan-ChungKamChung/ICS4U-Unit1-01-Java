@@ -16,6 +16,17 @@ import java.io.InputStreamReader;
 */
 final class Logs {
 
+    // Public Constant Declarations
+    /**
+     * MAX_WEIGHT is equal to the max weight that a truck can carry.
+     * */
+    public static final int MAX_WEIGHT = 1100;
+
+    /**
+     * LOG_WEIGHT_PER_METER is the density of maple (20kg/m).
+     * */
+    public static final int LOG_WEIGHT_PER_METER = 20;
+
     /**
     * Prevents instantiation.
     * Throw an exception IllegalStateException when called.
@@ -36,10 +47,8 @@ final class Logs {
     public static void main(final String[] args) throws IOException {
 
         // Variable Declarations
-        final int maxWeight = 1100;
-        final int logWeightPerMeter = 20;
-        float heightOfLog = 0f;
-        float maxAmountOfLogs = 0f;
+        final float heightOfLog;
+        final float maxAmountOfLogs;
 
         // User prompt
         System.out.print("Enter the log length (0.25, 0.5 or 1 meters): ");
@@ -53,7 +62,7 @@ final class Logs {
         heightOfLog = Float.parseFloat(inputReader.readLine());
 
         // Calculates the max amount of logs that can fit in the truck
-        maxAmountOfLogs = maxWeight / logWeightPerMeter / heightOfLog;
+        maxAmountOfLogs = MAX_WEIGHT / LOG_WEIGHT_PER_METER / heightOfLog;
 
         // Outputs the result of the calculation to the user
         System.out.println("The truck can hold " + maxAmountOfLogs + " logs.");
