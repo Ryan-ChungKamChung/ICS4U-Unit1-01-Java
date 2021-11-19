@@ -45,7 +45,9 @@ final class Logs {
         System.out.print("Enter the log length (0.25, 0.5 or 1 meters): ");
 
         // Gathering the user input
-        final BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
+        final BufferedReader inputReader = new BufferedReader(
+                new InputStreamReader(System.in)
+        );
 
         // Reads the input and converts it to float
         heightOfLog = Float.parseFloat(inputReader.readLine());
